@@ -8,14 +8,15 @@ def compute_height(n, parents):
     vecaki = [-1]
     apsk = [-1]
     max_height = 0
+    
     num_ar = numpy.array(list(map(int,parents.split(" "))))
     ind = numpy.where(num_ar =="-1")[0][0]
 
     def apskate(apsk_ar,p_arr):
-        for i in p_arr:
-         if i not in apsk_ar:
-            return i 
-        return None
+        for s in p_arr:
+         if s not in apsk_ar:
+            return s 
+        return  None
    
     for i in range(int(n)):
        berns = numpy.where(num_ar == ind)[0]
@@ -36,12 +37,12 @@ def compute_height(n, parents):
 
 def main():
     veids = input()
-    if "I" in veids:
+    if veids =="I" :
         #no klav
         daudz = input()
         elementi = input()
 
-    elif "F" in veids:
+    elif veids =="F":
         file_Name = input()
         if "a" in file_Name:
             return
