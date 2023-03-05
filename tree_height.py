@@ -1,18 +1,52 @@
 # python3
-
 import sys
 import threading
 import numpy
 
-
 def compute_height(n, parents):
-    # Write this function
+    # berni var but vairak par diviem
+    vecaki = [-1]
+    apsk = [-1]
     max_height = 0
+    num_ar = numpy.array(list(map(int,parents.split(" "))))
+    ind = numpy.where(num_ar =="-1")[0][0]
+
+    def apskate(apsk_ar,p_arr):
+        for i in p_arr:
+         if i not in apsk_ar:
+            return i 
+        return None
+   
+    for i in range(int(n)):
+       berns = numpy.where(num_ar == ind)[0]
+       if len(berns) == 0:
+         ind = vecaki.pop()
+       else:
+           berns = apskate(apsk,berns)
+           if berns == None:
+            ind = vecaki.pop()
+           else:
+              vecaki.append(ind)
+              ind = berns 
+              apsk.append(ind)
+              if len(vecaki)> max_height:
+                  max_height = len(vecaki)
     # Your code here
     return max_height
 
-
 def main():
+    veids = input()
+    if veids == "I":
+        #no klav
+        daudz = input()
+        elementi = input()
+        print(compute_height(daudz,elementi))
+
+    elif veids == "F":
+        pass
+
+
+
     # implement input form keyboard and from files
     
     # let user input file name to use, don't allow file names with letter a
@@ -21,7 +55,7 @@ def main():
     # input number of elements
     # input values in one variable, separate with space, split these values in an array
     # call the function and output it's result
-    pass
+    
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
