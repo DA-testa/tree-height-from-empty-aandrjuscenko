@@ -45,7 +45,7 @@ def main():
         file_Name = input()
         if "a" in file_Name:
             return
-        with open("./test/" + fileName, "r") as op:
+        with open("./test/" + file_Name, "r") as op:
              daudz = int(op.readline())
              elemeneti = op.readline()
     print(compute_height(daudz,elementi))
