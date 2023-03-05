@@ -40,11 +40,15 @@ def main():
         #no klav
         daudz = input()
         elementi = input()
-        print(compute_height(daudz,elementi))
 
     elif veids == "F":
-        pass
-
+        file_Name = input()
+        if "a" in file_Name:
+            return
+        with open("./test/" + fileName, "r") as op:
+             daudz = int(op.readline())
+             elemeneti = op.readline()
+    print(compute_height(daudz,elementi))
 
 
     # implement input form keyboard and from files
