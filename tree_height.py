@@ -36,12 +36,12 @@ def compute_height(n, parents):
 
 def main():
     veids = input()
-    if veids == "I":
+    if "I" in veids:
         #no klav
         daudz = input()
         elementi = input()
 
-    elif veids == "F":
+    elif "F" in veids:
         file_Name = input()
         if "a" in file_Name:
             return
